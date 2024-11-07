@@ -23,6 +23,7 @@ import { useNavigate } from "react-router-dom";
 import certificateStore from "../store/certificate-store";
 import $api from "../axios";
 import Header from "../components/Header";
+import env from "ts-react-dotenv";
 
 interface IFormInput {
   username: string;
@@ -65,7 +66,7 @@ const Contacts = () => {
 
     const response = await $api.post("", {
       params: {
-        ApiKey: "011ba11bdcad4fa396660c2ec447ef14",
+        ApiKey: env.API_KEY,
         MethodName: "OSSale",
         Id: certificate.ID,
         TableName: certificate.TABLENAME,

@@ -19,11 +19,12 @@ import $api from "../axios";
 import { useState } from "react";
 import certificateStore from "../store/certificate-store";
 import Header from "../components/Header";
+import env from "ts-react-dotenv";
 
 export async function loader() {
   const { data } = await $api.get("", {
     params: {
-      ApiKey: "011ba11bdcad4fa396660c2ec447ef14",
+      ApiKey: env.API_KEY,
       MethodName: "OSGetGoodList",
     },
   });
